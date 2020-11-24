@@ -8,15 +8,6 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware(['auth', 'role:participant']);
-    }
-    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -25,9 +16,7 @@ class HomeController extends Controller
     {
         $data = [
             "title" => 'Dashboard Participant',
-            "data" => [
-                'title-dashboard' => 'Hello '
-            ]
+            "data" => null
         ];
 
         return view('participant.dashboard', $data);

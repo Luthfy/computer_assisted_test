@@ -38,8 +38,12 @@ class LoginController extends Controller
                 return "control-panel/home";
                 break;
 
-            default:
+            case 'participant' :
                 return "participant/home";
+                break;
+
+            default:
+                return "login";
                 break;
         }
     }

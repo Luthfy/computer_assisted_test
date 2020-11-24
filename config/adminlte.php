@@ -14,8 +14,8 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
-    'title_prefix' => '',
+    'title' => '',
+    'title_prefix' => 'Educpns',
     'title_postfix' => '',
 
     /*
@@ -45,12 +45,12 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '<b>Educpns</b>',
+    'logo_img' => null,
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'AdminLTE',
+    'logo_img_alt' => null,
 
     /*
     |--------------------------------------------------------------------------
@@ -232,21 +232,45 @@ return [
 
     'menu' => [
         [
-            'text' => 'search',
-            'search' => true,
-            'topnav' => true,
-        ],
-        [
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            'text'        => 'Dashboard',
+            'url'         => 'control-panel/home',
+            'icon'        => 'fas fa-fw fa-home mr-2',
+        ],
+        ['header' => 'ADMINISTRATOR CONTROL'],
+        [
+            'text' => 'Control Data Peserta',
+            'url' => 'control-panel/participant',
+            'icon' => 'fas fa-fw fa-users mr-2'
+        ],
+        [
+            'text' => 'Control Data Grup Seleksi',
+            'url' => 'control-panel/selection',
+            'icon' => 'fas fa-fw fa-object-group mr-2'
+        ],
+        [
+            'text' => 'Control Data Grup Tes',
+            'url' => 'control-panel/test',
+            'icon' => 'fas fa-fw fa-cube mr-2'
+        ],
+        [
+            'text'  => 'Soal dan Pembahasan',
+            'url'   => 'control-panel/questions',
+            'icon'  => 'fas fa-fw fa-scroll mr-2 mt-2 mb-2'
+        ],
+        [
+            'text'  => 'Atur Ujian Try Out',
+            'url'   => 'control-panel/exams',
+            'icon'  => 'fas fa-fw fa-diagnoses mr-2 mt-2 mb-2'
+        ],
+        [
+            'text'  => 'Hasil Try Out',
+            'url'   => 'control-panel/results',
+            'icon'  => 'fas fa-fw fa-chart-area mr-2 mt-2 mb-2'
         ],
         ['header' => 'account_settings'],
         [
@@ -351,21 +375,21 @@ return [
 
     'plugins' => [
         'Datatables' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => false,
-                    'location' => '//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js',
+                    'asset' => true,
+                    'location' => '//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js',
                 ],
                 [
                     'type' => 'js',
-                    'asset' => false,
+                    'asset' => true,
                     'location' => '//cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js',
                 ],
                 [
                     'type' => 'css',
-                    'asset' => false,
+                    'asset' => true,
                     'location' => '//cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css',
                 ],
             ],

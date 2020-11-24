@@ -19,13 +19,24 @@ Route::get('/', 'HomeController@index');
 
 Auth::routes();
 
+/* administrator for control panel data */
 Route::group(['prefix' => 'control-panel', 'middleware' => ['auth', 'role:administrator']], function () {
     Route::get('home', 'Administrator\HomeController@index')->name('administrator.dashboard');
+    Route::resource('participant', 'Administrator\ParticipantController')->names('participant');
+    Route::resource('selection', 'Administrator\SelectionGroupController')->names('selection');
+    Route::resource('test', 'Administrator\TestGroupController')->names('test');
+    Route::resource('questions', 'Administrator\QuestionAndAnswerController')->names('question_and_answer');
+    Route::resource('exams', 'Administrator\ExamController')->names('exams');
 
 });
+/* end administrator for control panel data */
 
-
-Route::group(['prefix' => 'participant'], function () {
+/* administrator for control panel data */
+Route::group(['prefix' => 'participant', 'middleware' => ['auth', 'role:participant']], function () {
     Route::get('home', 'Participant\HomeController@index')->name('participant.dashboard');
 });
+/* participant for member */
 
+Route::get('ok', function () {
+    return Auth::user()->role;
+});
