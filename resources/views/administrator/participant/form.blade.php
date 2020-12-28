@@ -51,6 +51,7 @@
                     </div>
 
                     <div class="form-group text-right">
+                        <a href="{{ url('control-panel/participant') }}" class="btn btn-secondary">Kembali</a>
                         <input type="reset" value="Batal" class="btn btn-danger">
                         {!! Form::submit('Simpan', ['class'=>'btn btn-primary']) !!}
                     </div>

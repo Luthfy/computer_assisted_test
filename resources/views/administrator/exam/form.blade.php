@@ -48,6 +48,11 @@
                             {!! Form::label('number_of_question', 'Banyak Soal') !!}
                             {!! Form::number('number_of_question', null, ['class'=>'form-control', 'placeholder'=>'Masukan Jumlah Soal Untuk Sesi Ini']) !!}
                         </div>
+
+                        <div class="form-group">
+                            {!! Form::label('duration_exam', 'Lama Pengerjaan (Menit)') !!}
+                            {!! Form::number('duration_exam', null, ['class'=>'form-control', 'placeholder'=>'Masukan Lama Pengerjaan Berdasarkan Menit']) !!}
+                        </div>
                     </div>
                 </div>
             </div>

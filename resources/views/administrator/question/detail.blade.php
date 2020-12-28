@@ -33,10 +33,10 @@
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <p>A. {{ $data->answers[0]->text_answer }}</p>
-                                <p>B. {{ $data->answers[1]->text_answer }}</p>
-                                <p>C. {{ $data->answers[2]->text_answer }}</p>
-                                <p>D. {{ $data->answers[3]->text_answer }}</p>
+                                <p>A. {{ $data->answers[0]->text_answer }} {{ $data->answers[0]->is_true == 1 ? "(benar)" : '' }}</p>
+                                <p>B. {{ $data->answers[1]->text_answer }} {{ $data->answers[1]->is_true == 1 ? '(benar)' : '' }}</p>
+                                <p>C. {{ $data->answers[2]->text_answer }} {{ $data->answers[2]->is_true == 1 ? '(benar)' : '' }}</p>
+                                <p>D. {{ $data->answers[3]->text_answer }} {{ $data->answers[3]->is_true == 1 ? '(benar)' : '' }}</p>
                                 {{-- <p>E. {{ $data->answers[4]->text_answer }}</p> --}}
                             </td>
                         </tr>
@@ -46,7 +46,7 @@
                     </table>
                     <div class="row">
                         <div class="col-6">
-                            <a href='{{url("control-panel/test/$data->id/edit")}}' class="btn btn-success btn-block">Edit</a>
+                            <a href='{{url("control-panel/questions/$data->id/edit")}}' class="btn btn-success btn-block">Edit</a>
                         </div>
                         <div class="col-6">
                             <a href="#" onclick="delete_data()" class="btn btn-danger btn-block">Hapus</a>
@@ -60,7 +60,7 @@
                     Kolom Pembahasan
                 </div>
                 <div class="card-body">
-                    {!! print_r($data->solving->text_problem_solving) !!}
+
                 </div>
                 <div class="card-footer">
                     Footer
@@ -80,7 +80,7 @@ function delete_data()
         }
     });
 
-    let url = '{{ url("control-panel/test/$data->id") }}'
+    let url = '{{ url("control-panel/questions/$data->id") }}'
     $.ajax({
         url: url,
 
@@ -90,7 +90,7 @@ function delete_data()
             if (result)
             {
                 confirm("delete sukses")
-                window.location.href = "{{ url('control-panel/selection') }}"
+                window.location.href = "{{ url('control-panel/questions') }}"
             }
             else
             {

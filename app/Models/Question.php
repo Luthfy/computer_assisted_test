@@ -8,6 +8,10 @@ class Question extends Model
 {
     protected $table = "questions";
 
+    protected $fillable = [
+        'sub_test', 'text_question', 'correct_question', 'group_question_id', 'sub_group_question_id'
+    ];
+
     protected $casts = [
         'created_at' => 'datetime:yy-m-d h:i:s',
         'updated_at' => 'datetime:yy-m-d h:i:s',

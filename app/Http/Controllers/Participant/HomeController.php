@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Participant;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\Exam;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -16,7 +18,9 @@ class HomeController extends Controller
     {
         $data = [
             "title" => 'Dashboard Participant',
-            "data" => null
+            "data" => [
+                Exam::where('user_id', Auth::user()->id)->get()
+            ]
         ];
 
         return view('participant.dashboard', $data);

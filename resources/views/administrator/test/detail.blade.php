@@ -59,7 +59,7 @@ function delete_data()
             if (result)
             {
                 confirm("delete sukses")
-                window.location.href = "{{ url('control-panel/selection') }}"
+                window.location.href = "{{ url('control-panel/test') }}"
             }
             else
             {

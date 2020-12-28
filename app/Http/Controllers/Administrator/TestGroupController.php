@@ -93,7 +93,7 @@ class TestGroupController extends Controller
         $test = Test::findOrFail($id);
 
         $data = [
-            "title" => 'Ubah Data Kelompok Seleksi',
+            "title" => 'Ubah Data Kelompok Tes',
             "data" => $test
         ];
 

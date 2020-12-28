@@ -26,5 +26,10 @@ class TypeOfTestSeeder extends Seeder
             'code_sub_group_question' => 'TKP',
             'name_sub_group_question' => 'Tes Karakteristik Pribadi'
         ]);
+
+        Test::create([
+            'code_sub_group_question' => 'BID',
+            'name_sub_group_question' => 'Bidang'
+        ]);
     }
 }

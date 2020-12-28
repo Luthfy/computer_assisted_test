@@ -21,7 +21,9 @@ class ExamsDataTable extends DataTable
     {
         return datatables()
             ->eloquent($query)
-            ->addColumn('action', 'examsdatatable.action');
+            ->addColumn('action', function ($data){
+                return "<a href='".url("control-panel/exams/$data->id")."' class='btn btn-primary btn-sm btn-block'>Detail</a>";
+            });
     }
 
     /**
@@ -70,16 +72,16 @@ class ExamsDataTable extends DataTable
                   ->printable(false)
                   ->width(60)
                   ->addClass('text-center'),
-            Column::make('id'),
-            Column::make('code_exam'),
-            Column::make('package_exam'),
-            Column::make('group_question_id'),
-            Column::make('sub_group_question_id'),
-            Column::make('number_of_question'),
-            Column::make('test_result'),
-            Column::make('user_id'),
-            Column::make('created_at'),
-            Column::make('updated_at'),
+            Column::make('id')->visible(false),
+            Column::make('code_exam')->title('Kode Ujian'),
+            Column::make('package_exam')->title('Paket Ujian'),
+            Column::make('group_question_id')->title('Seleksi'),
+            Column::make('sub_group_question_id')->title('Tes'),
+            Column::make('number_of_question')->title('Soal'),
+            Column::make('test_result')->title('Hasil'),
+            Column::make('duration_exam')->title('Durasi'),
+            Column::make('user_id')->title('Peserta'),
+            Column::make('created_at')->title('Tanggal'),
         ];
     }
 

@@ -27,6 +27,7 @@ Route::group(['prefix' => 'control-panel', 'middleware' => ['auth', 'role:admini
     Route::resource('test', 'Administrator\TestGroupController')->names('test');
     Route::resource('questions', 'Administrator\QuestionAndAnswerController')->names('question_and_answer');
     Route::resource('exams', 'Administrator\ExamController')->names('exams');
+    Route::post('exams/{id}/create_question', 'Administrator\ExamController@create_question')->name('exams.create_question');
 
 });
 /* end administrator for control panel data */

@@ -294,15 +294,16 @@ class QuestionAndAnswerController extends Controller
      */
     public function destroy($id)
     {
-        // $delete = User::findOrFail($id)->delete();
+        $delete_question    = Question::findOrFail($id)->delete();
+        $delete_answer      = Answer::where('question_id', $id)->delete();
 
-        // if ($delete)
-        // {
-        //     return TRUE;
-        // }
-        // else
-        // {
-        //     return false;
-        // }
+        if ($delete_question || $delete_answer)
+        {
+            return TRUE;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
