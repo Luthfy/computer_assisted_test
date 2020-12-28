@@ -19,7 +19,7 @@ class CreateUserQuestionAnswerTable extends Migration
             $table->string('user_answer')->nullable();
             $table->string('result_checking')->nullable();
             $table->foreignId('question_id')->index();
-            $table->foreignId('exam_id')->index();
+            $table->uuid('exam_id')->index();
             $table->timestamps();
         });
     }
