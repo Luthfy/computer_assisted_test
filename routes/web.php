@@ -35,6 +35,8 @@ Route::group(['prefix' => 'control-panel', 'middleware' => ['auth', 'role:admini
 /* administrator for control panel data */
 Route::group(['prefix' => 'participant', 'middleware' => ['auth', 'role:participant']], function () {
     Route::get('home', 'Participant\HomeController@index')->name('participant.dashboard');
+    Route::get('/app/{any}', 'Participant\ExamController@index')
+        ->where('any',    '.*');
 });
 /* participant for member */
 
