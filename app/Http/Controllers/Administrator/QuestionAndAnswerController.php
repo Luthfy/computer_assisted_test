@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\DataTables\QuestionDataTable;
 use App\Models\Answer;
+use App\Models\Discussion;
 use App\Models\Question;
 use App\Models\Selection;
 use App\Models\Test;
@@ -175,7 +176,8 @@ class QuestionAndAnswerController extends Controller
 
         $data = [
             'title' => 'Detail Pertanyaan',
-            'data' => $question
+            'data' => $question,
+            'pembahasan' => Discussion::where('question_id', $id)->first()
         ];
 
         return view('administrator.question.detail', $data);

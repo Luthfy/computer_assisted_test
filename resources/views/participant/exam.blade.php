@@ -2,7 +2,8 @@
 
 @section('content')
 
-<div class="container">
+<div class="container-fluid">
+    <h3>Daftar Paket Ujian</h3>
     @foreach ($data as $item)
         <div class="card">
             <div class="card-body">

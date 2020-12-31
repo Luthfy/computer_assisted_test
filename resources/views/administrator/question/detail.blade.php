@@ -60,10 +60,11 @@
                     Kolom Pembahasan
                 </div>
                 <div class="card-body">
-
-                </div>
-                <div class="card-footer">
-                    Footer
+                    @if ($pembahasan == null)
+                    <a class='btn btn-info' href='{{url("control-panel/problem_solving/$data->id/create")}}'>Tambah Pembahasan</a>
+                    @else
+                        {!! $pembahasan->text_problem_solving !!}
+                    @endif
                 </div>
             </div>
         </div>
