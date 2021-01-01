@@ -69,68 +69,125 @@
                     @if ($data != null)
                     <div class="form-group" id="option-answer">
                         <div class="form-check mb-3">
-                            {!! Form::hidden('id_answer_a', $data->answers[0]->id) !!}
-                            {!! Form::radio('is_true', 0, $data->answers[0]->is_true == 1 ? true : false, ['class'=>'form-check-input']) !!}
-                            {!! Form::text('text_answer_a', $data->answers[0]->text_answer ?? null, ['class'=>'form-control', 'placeholder'=>'Masukan Opsi Jawaban']) !!}
+                            <div class="col-12 row justify-content-between">
+                                {!! Form::hidden('id_answer_a', $data->answers[0]->id) !!}
+                                {!! Form::radio('is_true', 0, $data->answers[0]->is_true == 1 ? true : false, ['class'=>'form-check-input']) !!}
+                                <div class="col-11">
+                                    {!! Form::text('text_answer_a', $data->answers[0]->text_answer, ['class'=>'form-control', 'placeholder'=>'Masukan Opsi Jawaban']) !!}
+                                </div>
+                                <div class="col-1">
+                                    {!! Form::number('text_poin_a', $data->answers[0]->poin_answer, ['class'=>'form-control', 'placeholder'=>'Poin']) !!}
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="form-check mb-3">
+                        <div class="col-12 row justify-content-between">
                             {!! Form::hidden('id_answer_b', $data->answers[1]->id) !!}
                             {!! Form::radio('is_true', 1, $data->answers[1]->is_true == 1 ? true : false, ['class'=>'form-check-input']) !!}
-                            {!! Form::text('text_answer_b', $data->answers[1]->text_answer ?? null, ['class'=>'form-control', 'placeholder'=>'Masukan Opsi Jawaban']) !!}
+                            <div class="col-11">
+                                {!! Form::text('text_answer_b', $data->answers[1]->text_answer, ['class'=>'form-control', 'placeholder'=>'Masukan Opsi Jawaban']) !!}
+                            </div>
+                            <div class="col-1">
+                                {!! Form::number('text_poin_b', $data->answers[1]->poin_answer, ['class'=>'form-control', 'placeholder'=>'Poin']) !!}
+                            </div>
                         </div>
 
-                        <div class="form-check mb-3">
+                        <div class="col-12 row justify-content-between">
                             {!! Form::hidden('id_answer_c', $data->answers[2]->id) !!}
                             {!! Form::radio('is_true', 2, $data->answers[2]->is_true == 1 ? true : false, ['class'=>'form-check-input']) !!}
-                            {!! Form::text('text_answer_c', $data->answers[2]->text_answer ?? null, ['class'=>'form-control', 'placeholder'=>'Masukan Opsi Jawaban']) !!}
+                            <div class="col-11">
+                                {!! Form::text('text_answer_c', $data->answers[2]->text_answer, ['class'=>'form-control', 'placeholder'=>'Masukan Opsi Jawaban']) !!}
+                            </div>
+                            <div class="col-1">
+                                {!! Form::number('text_poin_c', $data->answers[2]->poin_answer, ['class'=>'form-control', 'placeholder'=>'Poin']) !!}
+                            </div>
                         </div>
 
-                        <div class="form-check mb-3">
+                        <div class="col-12 row justify-content-between">
                             {!! Form::hidden('id_answer_d', $data->answers[3]->id) !!}
                             {!! Form::radio('is_true', 3, $data->answers[3]->is_true == 1 ? true : false, ['class'=>'form-check-input']) !!}
-                            {!! Form::text('text_answer_d', $data->answers[3]->text_answer ?? null, ['class'=>'form-control', 'placeholder'=>'Masukan Opsi Jawaban']) !!}
+                            <div class="col-11">
+                                {!! Form::text('text_answer_d', $data->answers[3]->text_answer, ['class'=>'form-control', 'placeholder'=>'Masukan Opsi Jawaban']) !!}
+                            </div>
+                            <div class="col-1">
+                                {!! Form::number('text_poin_d', $data->answers[3]->poin_answer, ['class'=>'form-control', 'placeholder'=>'Poin']) !!}
+                            </div>
                         </div>
 
-                        <div class="form-check mb-3">
-                        @if (count($data->answers) == 5)
-                            {!! Form::hidden('id_answer_e', $data->answers[4]->id ?? null) !!}
+                        <div class="col-12 row justify-content-between">
+                            {!! Form::hidden('id_answer_e', $data->answers[4]->id) !!}
                             {!! Form::radio('is_true', 4, $data->answers[4]->is_true == 1 ? true : false, ['class'=>'form-check-input']) !!}
-                            {!! Form::text('text_answer_e', $data->answers[4]->text_answer ?? null, ['class'=>'form-control', 'placeholder'=>'Masukan Opsi Jawaban']) !!}
-                        @else
-                            {!! Form::hidden('id_answer_e',) !!}
-                            {!! Form::radio('is_true', 4, null, ['class'=>'form-check-input']) !!}
-                            {!! Form::text('text_answer_e', null, ['class'=>'form-control', 'placeholder'=>'Masukan Opsi Jawaban']) !!}
-                        @endif
+                            <div class="col-11">
+                                {!! Form::text('text_answer_e', $data->answers[4]->text_answer, ['class'=>'form-control', 'placeholder'=>'Masukan Opsi Jawaban']) !!}
+                            </div>
+                            <div class="col-1">
+                                {!! Form::number('text_poin_e', $data->answers[4]->poin_answer, ['class'=>'form-control', 'placeholder'=>'Poin']) !!}
+                            </div>
                         </div>
 
                     </div>
                     @else
                     <div class="form-group" id="option-answer">
                         <div class="form-check mb-3">
-                            {!! Form::radio('is_true', 0, false, ['class'=>'form-check-input']) !!}
-                            {!! Form::text('text_answer_a', null, ['class'=>'form-control', 'placeholder'=>'Masukan Opsi Jawaban']) !!}
+                            <div class="col-12 row justify-content-between">
+                                {!! Form::radio('is_true', 0, false, ['class'=>'form-check-input']) !!}
+                                <div class="col-11">
+                                    {!! Form::text('text_answer_a', null, ['class'=>'form-control', 'placeholder'=>'Masukan Opsi Jawaban']) !!}
+                                </div>
+                                <div class="col-1">
+                                    {!! Form::number('text_poin_a', null, ['class'=>'form-control', 'placeholder'=>'Poin']) !!}
+                                </div>
+                            </div>
                         </div>
 
                         <div class="form-check mb-3">
-                            {!! Form::radio('is_true', 1, false, ['class'=>'form-check-input']) !!}
-                            {!! Form::text('text_answer_b', null, ['class'=>'form-control', 'placeholder'=>'Masukan Opsi Jawaban']) !!}
+                            <div class="col-12 row justify-content-between">
+                                {!! Form::radio('is_true', 1, false, ['class'=>'form-check-input']) !!}
+                                <div class="col-11">
+                                    {!! Form::text('text_answer_b', null, ['class'=>'form-control', 'placeholder'=>'Masukan Opsi Jawaban']) !!}
+                                </div>
+                                <div class="col-1">
+                                    {!! Form::number('text_poin_b', null, ['class'=>'form-control', 'placeholder'=>'Poin']) !!}
+                                </div>
+                            </div>
                         </div>
 
                         <div class="form-check mb-3">
-                            {!! Form::radio('is_true', 2, false, ['class'=>'form-check-input']) !!}
-                            {!! Form::text('text_answer_c', null, ['class'=>'form-control', 'placeholder'=>'Masukan Opsi Jawaban']) !!}
+                            <div class="col-12 row justify-content-between">
+                                {!! Form::radio('is_true', 2, false, ['class'=>'form-check-input']) !!}
+                                <div class="col-11">
+                                    {!! Form::text('text_answer_c', null, ['class'=>'form-control', 'placeholder'=>'Masukan Opsi Jawaban']) !!}
+                                </div>
+                                <div class="col-1">
+                                    {!! Form::number('text_poin_c', null, ['class'=>'form-control', 'placeholder'=>'Poin']) !!}
+                                </div>
+                            </div>
                         </div>
 
                         <div class="form-check mb-3">
-                            {!! Form::radio('is_true', 3, false, ['class'=>'form-check-input']) !!}
-                            {!! Form::text('text_answer_d', null, ['class'=>'form-control', 'placeholder'=>'Masukan Opsi Jawaban']) !!}
+                            <div class="col-12 row justify-content-between">
+                                {!! Form::radio('is_true', 3, false, ['class'=>'form-check-input']) !!}
+                                <div class="col-11">
+                                    {!! Form::text('text_answer_d', null, ['class'=>'form-control', 'placeholder'=>'Masukan Opsi Jawaban']) !!}
+                                </div>
+                                <div class="col-1">
+                                    {!! Form::number('text_poin_d', null, ['class'=>'form-control', 'placeholder'=>'Poin']) !!}
+                                </div>
+                            </div>
                         </div>
 
                         <div class="form-check mb-3">
-                            {!! Form::radio('is_true', 4, false, ['class'=>'form-check-input']) !!}
-                            {!! Form::text('text_answer_e', null, ['class'=>'form-control', 'placeholder'=>'Masukan Opsi Jawaban']) !!}
+                            <div class="col-12 row justify-content-between">
+                                {!! Form::radio('is_true', 4, false, ['class'=>'form-check-input']) !!}
+                                <div class="col-11">
+                                    {!! Form::text('text_answer_e', null, ['class'=>'form-control', 'placeholder'=>'Masukan Opsi Jawaban']) !!}
+                                </div>
+                                <div class="col-1">
+                                    {!! Form::number('text_poin_e', null, ['class'=>'form-control', 'placeholder'=>'Poin']) !!}
+                                </div>
+                            </div>
                         </div>
+
                     </div>
                     @endif
 

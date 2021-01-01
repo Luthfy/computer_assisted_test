@@ -18,9 +18,12 @@ class CreateProblemSolvingsTable extends Migration
             $table->string('text_problem_solving');
             $table->string('media_problem_solving')->nullable();
             $table->string('media_type_problem_solving')->nullable();
-            $table->foreignId('question_id')->index()->nullable();
+            $table->unsignedBigInteger('question_id')->index()->nullable();
             $table->timestamps();
+
+            $table->foreign('question_id')->references('id')->on('questions')->cascadeOnUpdate()->nullOnDelete();
         });
+
     }
 
     /**

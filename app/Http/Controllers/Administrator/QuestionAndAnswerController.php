@@ -109,6 +109,7 @@ class QuestionAndAnswerController extends Controller
                     {
                         $answer = [
                             "text_answer" => $request->text_answer_a,
+                            "poin_answer" => $request->text_poin_a,
                             "is_true" => $request->is_true == "0" ? "1" : "0",
                             "question_id" => $question->id ?? null
                         ];
@@ -119,6 +120,7 @@ class QuestionAndAnswerController extends Controller
                     {
                         $answer = [
                             "text_answer" => $request->text_answer_b,
+                            "poin_answer" => $request->text_poin_b,
                             "is_true" => $request->is_true == "1" ? "1" : "0",
                             "question_id" => $question->id ?? null
                         ];
@@ -129,6 +131,7 @@ class QuestionAndAnswerController extends Controller
                     {
                         $answer = [
                             "text_answer" => $request->text_answer_c,
+                            "poin_answer" => $request->text_poin_c,
                             "is_true" => $request->is_true == "2" ? "1" : "0",
                             "question_id" => $question->id ?? null
                         ];
@@ -139,6 +142,7 @@ class QuestionAndAnswerController extends Controller
                     {
                         $answer = [
                             "text_answer" => $request->text_answer_d,
+                            "poin_answer" => $request->text_poin_d,
                             "is_true" => $request->is_true == "3" ? "1" : "0",
                             "question_id" => $question->id ?? null
                         ];
@@ -149,6 +153,7 @@ class QuestionAndAnswerController extends Controller
                     {
                         $answer = [
                             "text_answer" => $request->text_answer_e,
+                            "poin_answer" => $request->text_poin_e,
                             "is_true" => $request->is_true == "4" ? "1" : "0",
                             "question_id" => $question->id ?? null
                         ];

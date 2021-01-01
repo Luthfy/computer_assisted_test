@@ -30,6 +30,16 @@
                         {!! Form::text('name_sub_group_question', null, ['class'=>'form-control', 'placeholder'=>'Masukan Nama Tes']) !!}
                     </div>
 
+                    <div class="form-group">
+                        {!! Form::label('passing_grade', 'Passing Grade') !!}
+                        {!! Form::number('passing_grade', null, ['class'=>'form-control', 'placeholder'=>'Passing grade', 'min' => 0]) !!}
+                    </div>
+
+                    <div class="form-group">
+                        {!! Form::label('group_question_id', 'Kelompok Seleksi Pertanyaan') !!}
+                        {!! Form::select('group_question_id', $selection_group, null, ['placeholder' => 'Pilih Kelompok Seleksi', 'class' => 'form-control']) !!}
+                    </div>
+
                     <div class="form-group text-right">
                         <a href="{{ url('control-panel/test') }}" class="btn btn-secondary">Kembali</a>
                         <input type="reset" value="Batal" class="btn btn-danger">

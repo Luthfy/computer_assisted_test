@@ -21,6 +21,9 @@ class GroupTestDataTable extends DataTable
     {
         return datatables()
             ->eloquent($query)
+            ->editColumn('selection', function($data){
+                return $data->group_question_id == null ? "" : $data->selection->code_group_question;
+            })
             ->addColumn('action', function ($data) {
                 return "<a href='".url("control-panel/test/$data->id")."' class='btn btn-primary btn-sm btn-block'>Detail</a>";
             });
@@ -34,7 +37,7 @@ class GroupTestDataTable extends DataTable
      */
     public function query()
     {
-        $test = Test::select();
+        $test = Test::select()->orderBy('created_at', 'DESC');
         return $this->applyScopes($test);
     }
 
@@ -73,10 +76,16 @@ class GroupTestDataTable extends DataTable
                   ->printable(false)
                   ->width(60)
                   ->addClass('text-center'),
-            Column::make('code_sub_group_question'),
-            Column::make('name_sub_group_question'),
-            Column::make('created_at'),
-            Column::make('updated_at'),
+            Column::make('code_sub_group_question')
+                ->title('Kode Tes'),
+            Column::make('name_sub_group_question')
+                ->title('Nama Tes'),
+            Column::make('passing_grade')
+                ->title('Passing Grade'),
+            Column::computed('selection'),
+            Column::make('created_at')
+                ->title('Dibuat Pada')
+
         ];
     }
 

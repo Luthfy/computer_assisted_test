@@ -72,6 +72,11 @@ class ExamController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    public function store_new(Request $request)
+    {
+
+    }
+
     public function store(Request $request)
     {
         $request->validate([

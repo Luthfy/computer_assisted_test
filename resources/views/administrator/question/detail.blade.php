@@ -26,18 +26,28 @@
                             <td>:  <b>{{ $data->test->name_sub_group_question }}</b><b>({{ $data->test->code_sub_group_question }})</b></td>
                         </tr>
                         <tr>
-                            <td colspan="2">
-                                <p>Pertanyaan !</p>
-                                <p>{{ $data->text_question }}</p>
+                            <td>
+                                Subject Test
+                            </td>
+                            <td>
+                                : <b>{{ $data->sub_test }}</b>
                             </td>
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <p>A. {{ $data->answers[0]->text_answer }} {{ $data->answers[0]->is_true == 1 ? "(benar)" : '' }}</p>
-                                <p>B. {{ $data->answers[1]->text_answer }} {{ $data->answers[1]->is_true == 1 ? '(benar)' : '' }}</p>
-                                <p>C. {{ $data->answers[2]->text_answer }} {{ $data->answers[2]->is_true == 1 ? '(benar)' : '' }}</p>
-                                <p>D. {{ $data->answers[3]->text_answer }} {{ $data->answers[3]->is_true == 1 ? '(benar)' : '' }}</p>
-                                {{-- <p>E. {{ $data->answers[4]->text_answer }}</p> --}}
+                                <p>Pertanyaan!</p>
+                                <p>{{ $data->text_question }}</p>
+                                <p>Jawaban!</p>
+                                <p>{{ $data->correct_question }}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <p>A. {{ $data->answers[0]->text_answer }} (poin:{{ $data->answers[0]->poin_answer }})</p>
+                                <p>B. {{ $data->answers[1]->text_answer }} (poin:{{ $data->answers[1]->poin_answer }})</p>
+                                <p>C. {{ $data->answers[2]->text_answer }} (poin:{{ $data->answers[2]->poin_answer }})</p>
+                                <p>D. {{ $data->answers[3]->text_answer }} (poin:{{ $data->answers[3]->poin_answer }})</p>
+                                <p>E. {{ $data->answers[4]->text_answer }} (poin:{{ $data->answers[4]->poin_answer }})</p>
                             </td>
                         </tr>
                         <tr>

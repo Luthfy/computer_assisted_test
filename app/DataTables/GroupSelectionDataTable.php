@@ -73,8 +73,10 @@ class GroupSelectionDataTable extends DataTable
                   ->printable(false)
                   ->width(60)
                   ->addClass('text-center'),
-            Column::make('code_group_question'),
-            Column::make('name_group_question'),
+            Column::make('code_group_question')
+                ->title('Kode Seleksi'),
+            Column::make('name_group_question')
+                ->title('Nama Seleksi'),
             Column::make('created_at'),
             Column::make('updated_at'),
         ];

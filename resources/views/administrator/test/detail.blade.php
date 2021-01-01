@@ -22,6 +22,14 @@
                             <td>Nama Tes</td>
                             <td>: <b>{{ $data->name_sub_group_question }}</b></td>
                         </tr>
+                        <tr>
+                            <td>Passing Grade</td>
+                            <td>: <b>{{ $data->passing_grade }}</b></td>
+                        </tr>
+                        <tr>
+                            <td>Seleksi</td>
+                            <td>: <b>{{ $data->group_question_id == null ? '' : $data->selection->name_group_question  }}</b></td>
+                        </tr>
                     </table>
                 </div>
                 <div class="card-footer">

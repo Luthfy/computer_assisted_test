@@ -39,29 +39,35 @@ class QuestionAnswerSeeder extends Seeder
 
             Answer::create([
                 'text_answer' => 'jawaban salah',
+                'poin_answer' => 0,
                 'is_true' => '0',
                 'question_id' => $question->id
             ]);
             Answer::create([
                 'text_answer' => 'jawaban salah',
+                'poin_answer' => 0,
                 'is_true' => '0',
                 'question_id' => $question->id
                 ]);
             Answer::create([
                 'text_answer' => 'jawaban benar',
+                'poin_answer' => 0,
                 'is_true' => '1',
                 'question_id' => $question->id
             ]);
             Answer::create([
                 'text_answer' => 'jawaban salah',
+                'poin_answer' => 0,
                 'is_true' => '0',
                 'question_id' => $question->id
             ]);
             Answer::create([
                 'text_answer' => 'jawaban salah',
+                'poin_answer' => 0,
                 'is_true' => '0',
                 'question_id' => $question->id
             ]);
+
 
         }
     }
